@@ -1,0 +1,3 @@
+@startuml er_diagram
+!include tables.pu
+@enduml

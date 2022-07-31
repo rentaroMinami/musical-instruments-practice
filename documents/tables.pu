@@ -1,0 +1,98 @@
+@startuml tables
+entity users {
+    + id [PK]
+    --
+    name
+    created_at
+    updated_at
+    deleted_at
+}
+
+entity user_settings {
+    + id [PK]
+    --
+    user_id [FK]
+    target_practice_duration
+    created_at
+    updated_at
+    deleted_at
+}
+
+entity user_instruments {
+    + id [PK]
+    --
+    user_profile_id [FK]
+    instrument_id [FK]
+    is_sub_instrument
+    created_at
+    updated_at
+    deleted_at
+}
+
+entity instruments {
+    + id [PK]
+    --
+    name
+    created_at
+    updated_at
+    deleted_at
+}
+
+entity 
+
+entity practice_categories {
+    + id [PK]
+    --
+    name
+    created_at
+    updated_at
+    deleted_at
+}
+
+entity practice_subcategories {
+    + id [PK]
+    --
+    practice_categorie_id [FK]
+    name
+    created_at
+    updated_at
+    deleted_at
+}
+
+entity practice_menus {
+    + id [PK]
+    --
+    practice_subcategoriy_id [FK]
+    name
+    is_user_defined
+    created_at
+    updated_at
+    deleted_at
+}
+
+entity instrument_belonging_to_practice_menu {
+    + id [PK]
+    --
+    instrument_id [FK]
+    practice_menus_id [FK]
+    is_user_defined
+    created_at
+    updated_at
+    deleted_at
+}
+
+entity practice_records {
+    + id [PK]
+    --
+    instrument_id [FK]
+    practice_menu_id [FK]
+    practice_duration
+    practiced_at
+    created_at
+    updated_at
+    deleted_at
+}
+
+
+
+@enduml
