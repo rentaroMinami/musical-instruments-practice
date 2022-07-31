@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int $instrument_id
  * @property int $practice_menu_id
  * @property int $practice_seconds
+ * @property string $memo
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
@@ -40,7 +41,8 @@ class PracticeRecord extends Model
 	protected $fillable = [
 		'instrument_id',
 		'practice_menu_id',
-		'practice_seconds'
+		'practice_seconds',
+		'memo'
 	];
 
 	public function instrument()

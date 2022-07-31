@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('instrument_id')->constrained('instruments');
             $table->foreignId('practice_menu_id')->constrained('practice_menus');
             $table->integer('practice_seconds');
+            $table->text('memo');
             $table->timestamps();
             $table->softDeletes();
         });

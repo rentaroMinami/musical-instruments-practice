@@ -21,7 +21,7 @@ entity user_settings {
 entity user_instruments {
     + id [PK]
     --
-    user_profile_id [FK]
+    user_setting_id [FK]
     instrument_id [FK]
     is_main
     created_at
@@ -85,6 +85,7 @@ entity practice_records {
     instrument_id [FK]
     practice_menu_id [FK]
     practice_seconds
+    memo
     practiced_at
     created_at
     updated_at
