@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $deleted_at
  * 
  * @property Collection|PracticeMenu[] $practice_menus
- * @property Collection|PracticeRecord[] $practice_records
+ * @property Collection|PracticeHistory[] $practice_histories
  * @property Collection|UserInstrument[] $user_instruments
  *
  * @package App\Models
@@ -42,9 +42,9 @@ class Instrument extends Model
 					->withTimestamps();
 	}
 
-	public function practice_records()
+	public function practice_histories()
 	{
-		return $this->hasMany(PracticeRecord::class);
+		return $this->hasMany(PracticeHistory::class);
 	}
 
 	public function user_instruments()

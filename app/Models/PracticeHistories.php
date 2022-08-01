@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class PracticeRecord
+ * Class PracticeHistory
  * 
  * @property int $id
  * @property int $instrument_id
@@ -27,10 +27,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @package App\Models
  */
-class PracticeRecord extends Model
+class PracticeHistory extends Model
 {
 	use SoftDeletes;
-	protected $table = 'practice_records';
+	protected $table = 'practice_histories';
 
 	protected $casts = [
 		'instrument_id' => 'int',

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('practice_records', function (Blueprint $table) {
+        Schema::create('practice_histories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->foreignId('instrument_id')->constrained('instruments');
             $table->foreignId('practice_menu_id')->constrained('practice_menus');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('practice_records');
+        Schema::dropIfExists('practice_histories');
     }
 };

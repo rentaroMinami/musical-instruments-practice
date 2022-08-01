@@ -79,7 +79,7 @@ entity instrument_belonging_to_practice_menu {
     deleted_at
 }
 
-entity practice_records {
+entity practice_histories {
     + id [PK]
     --
     instrument_id [FK]
