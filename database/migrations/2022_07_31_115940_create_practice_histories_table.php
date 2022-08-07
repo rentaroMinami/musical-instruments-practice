@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('practice_histories', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('instrument_id')->constrained('instruments');
             $table->foreignId('practice_menu_id')->constrained('practice_menus');
             $table->integer('practice_seconds');

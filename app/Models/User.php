@@ -22,6 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * 
+ * @property Collection|PracticeHistory[] $practice_histories
  * @property Collection|UserSetting[] $user_settings
  *
  * @package App\Models
@@ -46,6 +47,11 @@ class User extends Model
 		'password',
 		'remember_token'
 	];
+
+	public function practice_histories()
+	{
+		return $this->hasMany(PracticeHistory::class);
+	}
 
 	public function user_settings()
 	{

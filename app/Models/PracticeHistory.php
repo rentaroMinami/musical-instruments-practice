@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * Class PracticeHistory
  * 
  * @property int $id
+ * @property int $user_id
  * @property int $instrument_id
  * @property int $practice_menu_id
  * @property int $practice_seconds
@@ -24,6 +25,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * 
  * @property Instrument $instrument
  * @property PracticeMenu $practice_menu
+ * @property User $user
  *
  * @package App\Models
  */
@@ -33,12 +35,14 @@ class PracticeHistory extends Model
 	protected $table = 'practice_histories';
 
 	protected $casts = [
+		'user_id' => 'int',
 		'instrument_id' => 'int',
 		'practice_menu_id' => 'int',
 		'practice_seconds' => 'int'
 	];
 
 	protected $fillable = [
+		'user_id',
 		'instrument_id',
 		'practice_menu_id',
 		'practice_seconds',
@@ -53,5 +57,10 @@ class PracticeHistory extends Model
 	public function practice_menu()
 	{
 		return $this->belongsTo(PracticeMenu::class);
+	}
+
+	public function user()
+	{
+		return $this->belongsTo(User::class);
 	}
 }
