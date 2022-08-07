@@ -33,6 +33,7 @@ class PracticeHistory extends Model
 {
 	use SoftDeletes;
 	protected $table = 'practice_histories';
+	protected $guarded = ['user_id'];
 
 	protected $casts = [
 		'user_id' => 'int',
