@@ -18,15 +18,16 @@ class MyProfileController extends Controller
     public function index() {
         $user = User::find(auth()->id());
         $user_setting = UserSetting::find(auth()->id());
-        $archivement_seconds_this_month = PracticeHistory::selectRaw(
+        $practice_history = PracticeHistory::selectRaw(
             'user_id, SUM(practice_seconds) as practice_seconds'
             )->groupBy('user_id')
             ->first();
-        // var_dump($archivement_seconds_this_month); exit;
+        $archivement_seconds_this_month = $practice_history->practice_seconds ? $practice_history->practice_seconds : 0;
+
         return view('index', [
             'user_name' => $user->name,
             'target_minutes_this_month'=> $user_setting->target_practice_seconds / 60,
-            'archivement_minutes_this_month' => $archivement_seconds_this_month->practice_seconds / 60
+            'archivement_minutes_this_month' => $archivement_seconds_this_month / 60
         ]);
     }
 
