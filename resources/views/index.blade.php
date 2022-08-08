@@ -10,8 +10,10 @@
           <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
               <div class="p-6 bg-white border-b border-gray-200">
                   <h2 class="font-bold mb-2">{{ $user_name }} さん</h2>
-                  <p class="font-thin">今月の練習 : {{ $archivement_minutes_this_month }} min</p>
-                  <p class="font-thin">今月の目標 : {{ $target_minutes_this_month }} min</p>
+                  <p class="font-thin">今月の練習 : {{ $archivement_minutes_this_month }} 分</p>
+                  <p class="font-thin">今月の目標 : {{ $target_minutes_this_month }} 分</p>
+                  <p class="font-thin">目標までの残り : {{ $target_minutes_this_month - $archivement_minutes_this_month }} 分</p>
+                  
               </div>
               <div class="big-logo"></div>
           </div>

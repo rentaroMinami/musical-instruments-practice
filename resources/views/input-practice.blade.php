@@ -55,20 +55,22 @@
                 </select>
               </div> 
             
-            <div>
-              <select name="practice_seconds" class="my-1 w-full rounded">
+            <div class="w-full">
+              <select name="practice_seconds" class="my-1 w-11/12 rounded">
                 <option value="" disabled selected style="display:none;">練習時間を選択</option>
                 @foreach($minutes_list as $minutes)
-                  <option value="{{ $minutes * 60 }}">{{ $minutes }}</option> 分
+                  <option value="{{ $minutes * 60 }}">{{ $minutes }}</option> 
                 @endforeach
-              </select>  
+              </select>
+
+              <span class="ml-1 w-1/12"> 分</span>
             </div>
             <div>
               <input type="text" name="memo" class="my-1 w-full rounded" placeholder="メモ">
             </div>
             <button type="submit" class="bg-gray-500 hover:bg-gray-400 text-white rounded px-4 py-2 my-1 w-full">練習を記録</button>
           </form>
-          <p class="mt-3">今月の目標 : {{ $target_minutes_this_month }}</p>
+          <p class="mt-3">今月の目標 : {{ $target_minutes_this_month }} 分</p>
         </div>
       <div class="big-logo"></div>
     </div>

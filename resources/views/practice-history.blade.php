@@ -11,10 +11,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="m-4">
-              {{ $practice_history['instrument']['name'] }}
-              {{ $practice_history['practice_menu']['name'] }}
-              {{ $practice_history['practice_seconds'] / 60 }} min.
-              {{ $practice_history['practice_date'] }}
+              {{ $practice_history['instrument']['name'] }} | 
+              {{ $practice_history['practice_menu']['name'] }} | 
+              {{ $practice_history['practice_seconds'] / 60 }}分 | 
+              メモ：{{ $practice_history['memo'] }}
             </div>
           </div>
         </div>

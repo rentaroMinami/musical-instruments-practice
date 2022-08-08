@@ -59,12 +59,14 @@
 
             <div>
               目標練習時間
-              <select name="practice_seconds" class="my-1 w-full rounded">
+              <select name="practice_seconds" class="my-1 w-11/12 rounded">
                 <option value="" disabled selected style="display:none;">練習時間を選択</option>
                 @foreach($minutes_list as $minutes)
-                  <option value="{{ $minutes * 60 }}">{{ $minutes }}</option> 分
+                  <option value="{{ $minutes * 60 }}">{{ $minutes }}</option>
                 @endforeach
-              </select>  
+              </select> 
+              <span class="ml-1 w-1/12"> 分</span>
+
             </div>
             <button type="submit" onclick="location.href='/myprofile/update'" class="bg-gray-400 hover:bg-gray-400 text-white rounded px-4 py-2 mt-5 w-full" disabled>プロフィールを更新</button>
           </form>

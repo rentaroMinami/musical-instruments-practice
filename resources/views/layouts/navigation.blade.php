@@ -87,6 +87,24 @@
             </x-responsive-nav-link>
         </div>
 
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('input-practice')" :active="request()->routeIs('input-practice')">
+                {{ __('練習を記録') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('practice-history')" :active="request()->routeIs('practice-history')">
+                {{ __('練習記録の確認') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('myprofile')" :active="request()->routeIs('myprofile')">
+                {{ __('プロフィール') }}
+            </x-responsive-nav-link>
+        </div>
+
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">
@@ -102,7 +120,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('ログアウト') }}
                     </x-responsive-nav-link>
                 </form>
             </div>
