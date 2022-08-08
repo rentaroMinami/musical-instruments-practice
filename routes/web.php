@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
+use App\Http\Controllers\PracticeHistoryController;
+use App\Http\Controllers\MyProfileController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +19,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if (Auth::check()) {
+        return redirect('/dashboard');
+    }
+    return view('auth/login');
 });
 
-Route::get('/hello', function () {
-    return view('hello', ['name' => "Hello World."]);
-});
+Route::get('/dashboard', [MyProfileController::class, 'index'])
+    ->middleware(['auth'])->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+
+
+Route::get('/practice-history', [PracticeHistoryController::class, 'showPracticeHistories'])->name('practice-history');
+Route::get('/input-practice', [PracticeHistoryController::class, 'showInputForm'])->name('input-practice');
+Route::post('/create-practice-history', [PracticeHistoryController::class, 'createPracticeHistory'])->name('create-practice-history');
+
+Route::get('/myprofile', [MyProfileController::class, 'showMyProfile'])->name('myprofile');
+
+
 
 require __DIR__.'/auth.php';

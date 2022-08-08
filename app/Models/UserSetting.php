@@ -15,7 +15,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * Class UserSetting
  * 
  * @property int $id
- * @property int $user_id
  * @property int $target_practice_seconds
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -32,12 +31,10 @@ class UserSetting extends Model
 	protected $table = 'user_settings';
 
 	protected $casts = [
-		'user_id' => 'int',
 		'target_practice_seconds' => 'int'
 	];
 
 	protected $fillable = [
-		'user_id',
 		'target_practice_seconds'
 	];
 

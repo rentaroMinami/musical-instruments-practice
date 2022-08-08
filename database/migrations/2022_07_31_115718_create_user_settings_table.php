@@ -14,8 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('user_settings', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->foreignId('user_id')->constrained('users');
+            $table->bigIncrements('id')->constrained('users');
             $table->integer('target_practice_seconds');
             $table->timestamps();
             $table->softDeletes();

@@ -13,7 +13,26 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('ダッシュボード') }}
+                    </x-nav-link>
+                </div>
+
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('input-practice')" :active="request()->routeIs('input-practice')">
+                        {{ __('練習を記録') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('practice-history')" :active="request()->routeIs('practice-history')">
+                        {{ __('練習記録の確認') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('myprofile')" :active="request()->routeIs('myprofile')">
+                        {{ __('プロフィール') }}
                     </x-nav-link>
                 </div>
             </div>
